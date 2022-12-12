@@ -147,14 +147,14 @@
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: '',
+      envId: 'https://twikoo.ymployal.top/',
       region: ''
     }, null))
   }
 
   const getCount = () => {
     twikoo.getCommentsCount({
-      envId: '',
+      envId: 'https://twikoo.ymployal.top/',
       region: '',
       urls: [window.location.pathname],
       includeReply: false
@@ -203,7 +203,7 @@
   const getComment = () => {
     const runTwikoo = () => {
       twikoo.getRecentComments({
-        envId: '',
+        envId: 'https://twikoo.ymployal.top/',
         region: '',
         pageSize: 6,
         includeReply: true
