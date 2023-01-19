@@ -4,9 +4,9 @@ function hot_search(){
             // console.log(response);
             var hitokoto = response.data.hitokoto;
             console.log(hitokoto);
-
             var element = document.querySelector('#article-container > div:nth-child(2) > strong');
             element.innerHTML = hitokoto;
+
         });
 
 }
