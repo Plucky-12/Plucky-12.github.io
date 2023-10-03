@@ -1,0 +1,548 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><!--script.    这是关闭控制台的代码--><!--  ((function () {--><!--    var callbacks = [], timeLimit = 50, open = false;--><!--    setInterval(loop, 1);--><!--    return {--><!--      addListener: function (fn) {--><!--        callbacks.push(fn);--><!--      }, cancleListenr: function (fn) {--><!--        callbacks = callbacks.filter(function (v) {--><!--          return v !== fn;--><!--        });--><!--      }--><!--    }--><!----><!--    function loop() {--><!--      var startTime = new Date();--><!--      debugger;--><!--      if (new Date() - startTime > timeLimit) {--><!--        if (!open) {--><!--          callbacks.forEach(function (fn) {--><!--            fn.call(null);--><!--          });--><!--        }--><!--        open = true;--><!--        window.stop();--><!--        alert('你可真坏，请关闭控制台！');--><!--        document.body.innerHTML = "";--><!--      } else {--><!--        open = false;--><!--      }--><!--    }--><!--  })()).addListener(function () {--><!--    window.location.reload();--><!--  });--><!--script.--><!--  function toDevtools() {--><!--    let num = 0;--><!--    let devtools = new Date();--><!--    devtools.toString = function () {--><!--      num++;--><!--      if (num > 1) {--><!--        alert('你真坏，请关闭控制台！')--><!--        window.location.href = "about:blank"--><!--        blast();--><!--      }--><!--    }--><!--    console.log('', devtools);--><!--  }--><!--  toDevtools();--><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>flutterXmshop | 小猿博客</title><meta name="author" content="Xiao Yuan"><meta name="copyright" content="Xiao Yuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、 经典开场                        ✍for语法也可以死循环,递归void跟return便不再冲突.                     我的意思是:你不够坚定,我也没有重新开始的勇气.         二、前言简介        💻 时间稍纵即逝,转眼间大四就来到第一个学期,马上就要毕业了;马上也要开始准备 毕业设计;     上期文章中提到flutter,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutterXmshop">
+<meta property="og:url" content="https://www.ymployal.top/2023/10/03/flutterXmshop/index.html">
+<meta property="og:site_name" content="小猿博客">
+<meta property="og:description" content="一、 经典开场                        ✍for语法也可以死循环,递归void跟return便不再冲突.                     我的意思是:你不够坚定,我也没有重新开始的勇气.         二、前言简介        💻 时间稍纵即逝,转眼间大四就来到第一个学期,马上就要毕业了;马上也要开始准备 毕业设计;     上期文章中提到flutter,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bu.dusays.com/2022/06/26/62b85bac9b9eb.png">
+<meta property="article:published_time" content="2023-10-03T02:51:53.000Z">
+<meta property="article:modified_time" content="2023-10-03T08:28:49.387Z">
+<meta property="article:author" content="Xiao Yuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bu.dusays.com/2022/06/26/62b85bac9b9eb.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/12/02/6HFDh4fV3TQxLtI.png"><link rel="canonical" href="https://www.ymployal.top/2023/10/03/flutterXmshop/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: Xiao Yuan","link":"Link: ","source":"Source: 小猿博客","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'flutterXmshop',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-10-03 16:28:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/cat.css"><div id="myscoll"></div><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/12/02/M7t8KQuOVXmYGri.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 嘟囔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/feedDog/"><i class="fa-fw fas fa-shield-dog"></i><span> 汪汪</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小猿博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 嘟囔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/feedDog/"><i class="fa-fw fas fa-shield-dog"></i><span> 汪汪</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">flutterXmshop</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-10-03T02:51:53.000Z" title="Created 2023-10-03 10:51:53">2023-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-03T08:28:49.387Z" title="Updated 2023-10-03 16:28:49">2023-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="flutterXmshop"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><p><img src="/img/flutterXmshop.jpg" alt="Header"></p>
+<div style="font-size: 14px;color: #0e0404">
+
+<h1 id="一、-经典开场"><a href="#一、-经典开场" class="headerlink" title="一、 经典开场"></a>一、 经典开场</h1><main class="main" style="
+    width: 100%; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+        text-shadow: 
+        0 0 10px #25efa6,
+        0 0 100px #0ebeff,
+        0 0 10px #25efa6,
+        0 0 100px #0ebeff,
+        0 0 10px #25efa6 ">
+    <span style=" 
+        display: inline-block;
+        width: 44ch;
+        font: bold 200% Consolas, Monaco, monospace;   /*等宽字体*/
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 20px;
+        border-right: 1px solid transparent;
+        animation: typing 10s steps(100), caret .5s steps(1) infinite;">
+                  ✍for语法也可以死循环,递归void跟return便不再冲突.<br>
+    </span>
+</main>
+<main class="main" style="
+    width: 100%; 
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px #25efa6,
+        0 0 100px #0ebeff,
+        0 0 10px #25efa6,
+        0 0 100px #0ebeff,
+        0 0 10px #25efa6 ">
+    <span style=" 
+        display: inline-block;
+        width: 42ch;
+        font: bold 200% Consolas, Monaco, monospace;   /*等宽字体*/
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 20px;
+        border-right: 1px solid transparent;
+        animation: typing 16s steps(100), caret .5s steps(1) infinite;">
+        我的意思是:你不够坚定,我也没有重新开始的勇气.
+    </span> 
+</main>
+
+<h1 id="二、前言"><a href="#二、前言" class="headerlink" title="二、前言"></a>二、前言</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><div >
+   <p style="font-size: 18px;background-color: rgba(176,213,223,30%)">
+   💻 时间稍纵即逝,转眼间大四就来到第一个学期,马上就要毕业了;马上也要开始准备 <span style="color: red">毕业设计</span>;
+    上期文章中提到<span style="color: darkred">flutter</span>,同时结尾处也说了GetX实战小米商城,终于在几个月的不断学习下,终于算完成了这个小小的目标;
+尽管过程非常的难受,好在都克服了;多余的话就不啰嗦了,直接进入正题.background-color: rgba(18,213,223,30%)
+   </p>
+</div>
+
+<h2 id="项目整体设计思路"><a href="#项目整体设计思路" class="headerlink" title="项目整体设计思路"></a>项目整体设计思路</h2><div style="font-size: 18px;">
+
+<ul>
+<li>构造RP原型</li>
+<li>写静态前端代码</li>
+<li>渲染接口数据</li>
+</ul>
+</div>
+
+
+<h1 id="三、开发工具"><a href="#三、开发工具" class="headerlink" title="三、开发工具"></a>三、开发工具</h1><div style="font-size: 18px;color: red">
+
+<ul>
+<li>Android Studio 2022 3.1</li>
+<li>Visual Studio Code</li>
+</ul>
+</div>
+
+<h1 id="四、涉及技术栈"><a href="#四、涉及技术栈" class="headerlink" title="四、涉及技术栈"></a>四、涉及技术栈</h1><h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><div>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+   😊 在这里我也就不多啰嗦了,上一期文章已经介绍Flutter了,感兴趣的请自行学习:<a href="https://www.ymployal.top/2023/07/04/flutter01/">👉🏼关于Flutter</a>
+</p>
+</div>
+
+
+
+<h2 id="GetX"><a href="#GetX" class="headerlink" title="GetX"></a>GetX</h2><div>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+   🗒️️ 个人觉得GetX就差不多是MVC框架类型,MVC代表的是什么呢？M代表的是:模型层;V代表的是:视图层;C代表的是:控制器层。
+    这里我就不多进行讲述了GetX,感兴趣的请自行学习 
+    <a href="https://www.ymployal.top/2023/08/31/flutterGetx/">👉🏼关于GetX</a>
+   </p>
+</div>
+
+<h1 id="五、代码分享"><a href="#五、代码分享" class="headerlink" title="五、代码分享"></a>五、代码分享</h1><h2 id="考眼力"><a href="#考眼力" class="headerlink" title="考眼力"></a>考眼力</h2><div>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+    💔 我记得这个问题是出现在8月27日晚上21点30左右,我就看这个代码看了半个小时,感觉逻辑也没有错误,就是不能实现我想要的功能:
+"分类页选中时候给选中的哪一项前面添加一个红色的小标签";现在也分享给广大网友,感兴趣的可以找找代码的错误.
+   </p>
+
+<p><img src="/img/flutterFindBugOne.png" alt="BugOne"></p>
+</div>
+
+<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><div>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+    🧩 轮播图在我们学习前端的时候总是会经常遇见,我们每一个人打开一个APP或者网页第一印象应该是轮播图,
+        轮播图的特点就是很直观的冲击我们的视角,给人一个还想点进去的冲动
+        特别是当我们在调用后后台数据的时候就会产生数据渲染,
+        很好的是Flutter提供了swiper组件实现轮播图的渲染.
+   </p>
+
+<p><img src="/img/flutterHomeSwiper.png" alt="Swiper"></p>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+    🔢 轮播图的数据自己可以把他写死,也可以是动态渲染,一般情况下都是动态渲染.
+        那么,数据的来源就需要通过接口的调用来实现轮播图的动态渲染了.
+
+   </p>
+
+
+<p><img src="/img/flutterHomeSwiperData.png" alt="Swiper"></p>
+</div>
+
+<h2 id="父子组件传值"><a href="#父子组件传值" class="headerlink" title="父子组件传值"></a>父子组件传值</h2><div>
+   <p style="font-size: 20px;background-color: #F8F9F9">
+    👨🏼‍🦱  父组件给子组件传值,状态和管理方法定义在父组件,通过构造函数传递给子组件,其他子组件按照同样方法接收即可共用该父组件的状态.
+        在控制器和组进行父子关系绑定前,应当进行以下操作:确定好父子关系的目的和意义,明确父组件（容器）和子组件（内容）的关系.
+        在组件内部定义好需要暴露给父组件的属性和方法,并在需要的地方使用这些属性和方法.
+   </p>
+    <p style="font-size: 20px;background-color: #F8F9F9">
+    👨🏼‍🦱  定义一个父组件:
+   </p>
+    
+<p><img src="/img/flutterContentParentComponent.png" alt="ParentComponent"></p>
+   <p style="font-size: 20px;font-weight: bold;background-color: #F8F9F9;color: red">
+    👶🏼 子组件如何接收父组件传过来的属性或者方法?
+   </p>
+
+<p><img src="/img/flutterContentSubcomponent.png" alt="Subcomponent"></p>
+   <p style="font-size: 20px;font-weight: bold;background-color: #F8F9F9;color: deepskyblue">
+    👶🏼 如何使用在子组件中使用父组件中的属性或者方法?
+   </p>
+
+<p><img src="/img/flutterContentUseSubcomponent.png" alt="Use"></p>
+</div>
+
+
+
+
+
+
+<h1 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h1><div>
+   <p style="font-size: 20px;background-color: rgba(176,213,223,20%);">
+      看了上述的文章如果对你来说有一定的帮助, 请别忘了给<span style="color: red">小猿一点鼓励!</span>
+   </p>
+    <p style="font-size: 20px;background-color: rgba(176,213,223,20%)">
+      通过这次的一个实战,我也对自己的软板有了一定的了解,同时对前后端交互数据、请求好像有了进一步的的了解;
+      视频学习地址： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nY4y1U7rw/?vd_source=8a2d2437f3c68308d1c5fb038d646aeb">点击前往</a>
+   </p>
+</div>
+
+
+<h1 id="🧠-完美收官"><a href="#🧠-完美收官" class="headerlink" title="🧠 完美收官"></a>🧠 完美收官</h1><div class="container"
+    style="@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');">
+    <p style="   
+        color: #000000;
+        text-shadow: 
+        0 0 10px #ffffff,
+        0 0 20px #06f69f,
+        0 0 50px #0fb4f3,
+        0 0 100px #e70d0d,
+        0 0 200px #cedbe3">
+    Opportunity knocks but once.
+    </p>
+</div>
+
+<style>
+  @keyframes typing{
+    from {
+        width: 0;
+    }
+  }
+  @keyframes caret{
+    50% { border-right-color: currentColor}
+  }
+</style>
+
+
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Xiao Yuan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://www.ymployal.top/2023/10/03/flutterXmshop/">https://www.ymployal.top/2023/10/03/flutterXmshop/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2022/06/26/62b85bac9b9eb.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/08/31/flutterGetx/"><img class="prev-cover" src="https://bu.dusays.com/2022/06/19/62af27bc9edfc.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">flutterGetx</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/12/02/M7t8KQuOVXmYGri.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Xiao Yuan</div><div class="author-info__description">临渊羡鱼,不如退而结网.</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Plucky-12/Plucky-12.github.io"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Plucky-12/Plucky-12.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2575631083@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Where there is a will,there is a way.</div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople1.js"></script><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/zdog.dist.js"></script><script id="rendered-js" src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople.js"></script><style>.card-widget.card-announcement {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E7%BB%8F%E5%85%B8%E5%BC%80%E5%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">一、 经典开场</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">二、前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">项目整体设计思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">三、开发工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B6%89%E5%8F%8A%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-number">4.</span> <span class="toc-text">四、涉及技术栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter"><span class="toc-number">4.1.</span> <span class="toc-text">Flutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GetX"><span class="toc-number">4.2.</span> <span class="toc-text">GetX</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB"><span class="toc-number">5.</span> <span class="toc-text">五、代码分享</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E7%9C%BC%E5%8A%9B"><span class="toc-number">5.1.</span> <span class="toc-text">考眼力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E6%92%AD%E5%9B%BE"><span class="toc-number">5.2.</span> <span class="toc-text">轮播图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-number">5.3.</span> <span class="toc-text">父子组件传值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">六、总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%A7%A0-%E5%AE%8C%E7%BE%8E%E6%94%B6%E5%AE%98"><span class="toc-number">7.</span> <span class="toc-text">🧠 完美收官</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/03/flutterXmshop/" title="flutterXmshop"><img src="https://bu.dusays.com/2022/06/26/62b85bac9b9eb.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flutterXmshop"/></a><div class="content"><a class="title" href="/2023/10/03/flutterXmshop/" title="flutterXmshop">flutterXmshop</a><time datetime="2023-10-03T02:51:53.000Z" title="Created 2023-10-03 10:51:53">2023-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/31/flutterGetx/" title="flutterGetx"><img src="https://bu.dusays.com/2022/06/19/62af27bc9edfc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="flutterGetx"/></a><div class="content"><a class="title" href="/2023/08/31/flutterGetx/" title="flutterGetx">flutterGetx</a><time datetime="2023-08-31T15:13:38.000Z" title="Created 2023-08-31 23:13:38">2023-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/04/flutter01/" title="Flutter"><img src="https://bu.dusays.com/2022/06/20/62af4e9834a67.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Flutter"/></a><div class="content"><a class="title" href="/2023/07/04/flutter01/" title="Flutter">Flutter</a><time datetime="2023-07-04T13:01:40.000Z" title="Created 2023-07-04 21:01:40">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/03/java-desig-eight/" title="享元模式"><img src="https://bu.dusays.com/2022/05/02/626f7b65d62a6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="享元模式"/></a><div class="content"><a class="title" href="/2023/06/03/java-desig-eight/" title="享元模式">享元模式</a><time datetime="2023-06-03T15:08:10.000Z" title="Created 2023-06-03 23:08:10">2023-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/03/java-desig-seven/" title="适配器模式"><img src="https://bu.dusays.com/2022/05/01/626e8de7cf950.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="适配器模式"/></a><div class="content"><a class="title" href="/2023/06/03/java-desig-seven/" title="适配器模式">适配器模式</a><time datetime="2023-06-03T14:20:11.000Z" title="Created 2023-06-03 22:20:11">2023-06-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Xiao Yuan</div><div class="framework-info"><!--span= _p('footer.framework') + ' '--><!--a(href='https://hexo.io')= 'Hexo'--><!--span.footer-separator |--><!--span= _p('footer.theme') + ' '--><!--a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'--><!--span= _p('footer.aboutMe') + ''--><!--a(href='https://github.com/Plucky-12/Plucky-12.github.io') = 'Github'--></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://github.com/Plucky-12/Plucky-12.github.io"><img class="icp-icon" src="https://img.shields.io/badge/Github-Github-blue?style=plastic&logo=github"></a> <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index"><img class="icp-icon" src="https://img.shields.io/badge/%E4%B8%B4%E6%B8%8A%E7%8E%B0%E7%BE%A1%E9%B1%BC-%E4%B8%8D%E5%A6%82%E9%80%80%E8%80%8C%E7%BB%93%E7%BD%91-c19bdf?style=plastic&logo=pink"></a> <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><img class="icp-icon" src="https://img.shields.io/badge/%E6%B8%9DICP%E5%A4%87-2022013286%E5%8F%B7--1-f63ba8?style=plastic&logo=appveyor"></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.ymployal.top/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.ymployal.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.ymployal.top/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "Unable to get the data, please make sure the settings are correct."
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += 'No Comment'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script defer src="/js/encryption.js"><script load src="/js/pjax_.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.8" zIndex="-8" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/archives/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
